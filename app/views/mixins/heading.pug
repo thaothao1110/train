@@ -1,0 +1,13 @@
+//- How to use
+//- +heading({
+//- title: 'Nos solutions',
+//- desc:  'Découvrez bientôt un site dédié aux comités d\'entreprises, collectivités, revendeurs, netplayers, professionnels du tourisme, groupes scolaires et centres de loisirs.'
+//- })
+
+mixin heading(obj)
+  if obj && obj.title
+    .section-title
+      h2.main-title=obj.title
+      if obj.desc
+        .desc
+          p!=obj.desc

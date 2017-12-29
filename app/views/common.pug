@@ -1,0 +1,79 @@
+extends layouts/layout
+
+block vars
+  -title = 'Style Guide'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Style Guide
+  h2.style-guide-sub-header Heading
+  br
+  +heading({
+    title: 'Nos solutions',
+    desc:  'Découvrez bientôt un site dédié aux comités d\'entreprises, collectivités, revendeurs, netplayers, professionnels du tourisme, groupes scolaires et centres de loisirs.'
+  })
+  h2.style-guide-sub-header Color
+  p.block.bg-gray.text-large Main color (main text color of website)
+  br
+  p.color-1.text-large Blue color
+  br
+  +link('Pink color').color-2.text-large
+  br
+  br
+  h2.style-guide-sub-header Icon
+  ul.icon-list
+    li: span.icon.icon-account.color-2 &nbsp;
+    li: span.icon.icon-arrow &nbsp;
+    li: span.icon.icon-arrow-1 &nbsp;
+    li: span.icon.icon-arrow-2 &nbsp;
+    li: span.icon.icon-arrow-3 &nbsp;
+    li: span.icon.icon-arrow-4 &nbsp;
+    li: span.icon.icon-arrow-down &nbsp;
+    li: span.icon.icon-arrow-down-1 &nbsp;
+    li: span.icon.icon-arrow-up &nbsp;
+    li: span.icon.icon-check &nbsp;
+    li: span.icon.icon-close &nbsp;
+    li: span.icon.icon-comment &nbsp;
+    li: span.icon.icon-comment-1 &nbsp;
+    li: span.icon.icon-cubic-1 &nbsp;
+    li: span.icon.icon-cubic-2 &nbsp;
+    li: span.icon.icon-cubic-3 &nbsp;
+    li: span.icon.icon-facebook-1 &nbsp;
+    li: span.icon.icon-facebook-2 &nbsp;
+    li: span.icon.icon-gift.color-2 &nbsp;
+    li: span.icon.icon-icon-lock &nbsp;
+    li: span.icon.icon-instagram &nbsp;
+    li: span.icon.icon-like &nbsp;
+    li: span.icon.icon-like-1 &nbsp;
+    li: span.icon.icon-lock &nbsp;
+    li: span.icon.icon-mail &nbsp;
+    li: span.icon.icon-menu &nbsp;
+    li: span.icon.icon-people &nbsp;
+    li: span.icon.icon-phone &nbsp;
+    li: span.icon.icon-pin &nbsp;
+    li: span.icon.icon-plus &nbsp;
+    li: span.icon.icon-pro-detail &nbsp;
+    li: span.icon.icon-recettes-1 &nbsp;
+    li: span.icon.icon-recettes-2 &nbsp;
+    li: span.icon.icon-recettes-3 &nbsp;
+    li: span.icon.icon-retirer &nbsp;
+    li: span.icon.icon-search &nbsp;
+    li: span.icon.icon-star &nbsp;
+    li: span.icon.icon-star-1 &nbsp;
+    li: span.icon.icon-star-2 &nbsp;
+    li: span.icon.icon-star-half &nbsp;
+    li: span.icon.icon-tilde &nbsp;
+    li: span.icon.icon-twitter &nbsp;
+    li: span.icon.icon-youtube &nbsp;
+  br
+  h2.style-guide-sub-header Button
+  ul.link-list
+    li: +link('Voir toutes les destinations').btn
+    li
+      +link('Voir toutes les destinations').btn.btn-1
+        span Voir toutes les destinations
+        span.icon.icon-arrow &nbsp;
+    li
+      +link('Voir toutes les destinations').btn.btn-2
+        span Cart
+        span.icon.icon-pro-detail &nbsp;

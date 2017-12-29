@@ -1,0 +1,98 @@
+// Common
+.middle-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Title block
+.section-title{
+  .clearfix();
+  .main-title{
+    font-family: @exo-semibold;
+    color: @blue;
+    .px2rem(font-size, 30);
+    text-align: center;
+    .px2rem(margin-bottom, 10);
+  }
+  .desc{
+    font-family: @open-sans;
+    .px2rem(font-size, 15);
+  }
+}
+
+// Color
+.bg-gray{
+  background: @bg-gray;
+}
+.color-1{
+  color: @blue;
+}
+.color-2{
+  color: @pink;
+}
+
+// Text size
+.text-large{
+  .px2rem(font-size, 15);
+}
+
+// Button
+.btn{
+  display: inline-block;
+  position: relative;
+  font-family: @exo-semibold;
+  .px2rem(font-size, 13);
+  transition: background .5s,color .5s;
+  color: @pink;
+  border: 1px solid @pink;
+  .px2rem(padding, 15);
+  &:hover{
+    .no-touch &{
+      background: @pink;
+      color: #ffffff;
+    }
+  }
+}
+.btn-1{
+  background: @pink;
+  color: #ffffff;
+  .px2rem(padding-right, 30);
+  .icon{
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    right: 4px;
+  }
+  &:hover{
+    .no-touch &{
+      background: #ffffff;
+      color: @pink;
+    }
+  }
+}
+.btn-2{
+  background: @blue;
+  border: 1px solid @blue;
+  color: #ffffff;
+  .px2rem(padding-right, 35);
+  .icon{
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 11px;
+  }
+  &:hover{
+    .no-touch &{
+      background: #ffffff;
+      border: 1px solid @blue;
+      color: @blue;
+    }
+  }
+}
+
+// Link
+.link{
+  color: @pink;
+  text-decoration: underline;
+}

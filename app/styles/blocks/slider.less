@@ -1,0 +1,131 @@
+// Slider style
+
+// Show the first item when disable js
+.slider-item {
+  position: relative;
+  &:not(:first-child) {
+    .no-js & { display: none;}
+  }
+}
+
+.desc-slider {
+  position: absolute;
+  .px2rem(top, 30);
+  margin-left: 5px;
+  .px2rem(padding, 10 18 8 10);
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+  }
+  &:before {
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: @pink;
+    transform: skew(3deg,-1deg);
+    outline: 1px solid transparent;
+  }
+  &:after {
+    z-index: 1;
+    top: 9px;
+    left: 13px;
+    right: -10px;
+    bottom: -7px;
+    background-color: @blue;
+    transform: skew(1deg,1deg);
+    outline: 1px solid transparent;
+  }
+}
+.title-slider {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  .px2rem(font-size, 13);
+  font-family: @exo-semibold;
+}
+
+.slick-slide img{
+  max-width: 100%;
+}
+
+.slick-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: transparent;
+  z-index: 1;
+  &:before{
+    font-family: @icons-demo;
+    content: @icon-arrow-up;
+    color: #ffffff;
+    .px2rem(font-size, 40);
+  }
+  &.slick-prev{
+    left: 10px;
+    transform: rotate(-90deg);
+  }
+  &.slick-next{
+    right: 10px;
+    transform: rotate(90deg);
+  }
+}
+
+.slick-dots{
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  li{
+    display: inline-block;
+    margin: 0 3px;
+    button{
+      background: @blue;
+      border: none;
+      border-radius: 50%;
+      .size(1.2rem);
+      color: transparent;
+      .no-touch &:hover {
+        background: @pink;
+      }
+    }
+  }
+  .slick-active{
+    button{
+      background: @pink;
+    }
+  }
+}
+
+// tablet 600
+@media (min-width: @screen-mobile-landscape) {
+  .title-slider { .px2rem(font-size, 20);}
+  .desc-slider {
+    .px2rem(top, 37);
+    .px2rem(padding, 20 40 20 24);
+    &:after {
+      .px2rem(top, 25);
+      .px2rem(left, 38);
+      .px2rem(right, -33);
+      .px2rem(bottom, -24);
+    }
+  }
+}
+
+// desktop 1024
+@media (min-width: @screen-md-min) {
+  .desc-slider { .px2rem(top, 87);}
+}
+
+// desktop large 1200
+@media (min-width: @screen-lg-min) {
+  .title-slider {.px2rem(font-size, 40);}
+  .desc-slider {
+    .px2rem(top, 93);
+    .px2rem(padding, 25 70 25 31);
+  }
+}

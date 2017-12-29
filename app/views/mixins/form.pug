@@ -1,0 +1,61 @@
+mixin form(id, method, action, name)
+  - if (typeof(method) === 'undefined') method = 'post'
+  - if (typeof(action) === 'undefined') action = '#'
+  - if (typeof(name) === 'undefined') name = id
+  form(action=action, method=method, name= name, id=id)&attributes(attributes)
+    if block
+      block
+
+mixin label(idInput, text)
+  label.label(for=idInput!=='undefined'?idInput:"")&attributes(attributes)!=text
+    if block
+      block
+
+mixin input(type, id, placeholder, inputAttr)
+  div&attributes(attributes)
+    if block
+      block
+    input.input(type="#{type}", name="#{id}", id="#{id}", placeholder=placeholder)&attributes(inputAttr || {})
+
+mixin button(obj)
+  button(type=obj.type, name=obj.name, id=obj.name)&attributes(attributes)
+    if block
+      block
+
+mixin input-group-custom(obj, inputDatas)
+  .form-group&attributes(attributes)
+      label.label(for=obj.id, class=obj.classLabel) #{obj.textLabel || null}
+      if obj.isArea
+        .form-input
+          textarea(class=obj.classInput, id=obj.id, value=obj.value, data-input-parsley)&attributes(inputDatas)
+      else
+        .form-input
+          input(type=obj.type, class=obj.classInput, id=obj.id, name=obj.id, disabled=obj.disabled, value=obj.value, autocomplete="off", data-input-parsley)&attributes(inputDatas)
+
+mixin select-custom(obj, selectDatas, items)
+  .form-group&attributes(attributes)
+    label.label(for=obj.id, class=obj.classLabel) #{obj.textLabel || null}
+    select(data-custom-select, id=obj.id, name=obj.id)&attributes(selectDatas)
+      each item in items
+        - var selected = item.selected ? 'selected' : false
+        - var disabled = item.disabled ? 'disabled' : false
+        option(value=item.value selected=selected disabled=disabled)!=item.text
+
+mixin check-box-custom(item, checkboxDatas)
+  .custom-checkbox&attributes(attributes)
+    - var required = item.required ? 'required' : false
+    input(type=item.type, id=item.id, name=item.name, value=item.value required=required).hidden&attributes(checkboxDatas)
+    if item.value
+      +label(for=item.id)!=item.value
+        span.check
+    if block
+      block
+
+mixin radio-custom(item, radioDatas)
+  .custom-radio&attributes(attributes)(tabindex='0')
+    input(type=item.type, id=item.id, name=item.name, value=item.value).hidden&attributes(radioDatas)
+    if item.label
+      +label(for=item.id)!=item.label
+        span.check
+    if block
+      block

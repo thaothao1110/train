@@ -1,0 +1,198 @@
+.destination-block {
+  .px2rem(padding, 3 0 40);
+  .grid-fluid {
+    padding: 0;
+  }
+  .main-title {
+    .px2rem(margin-bottom, 5);
+  }
+  .section-title .desc { line-height: 1.3;}
+  // thumbnail block in item destination
+  .thumbnail-block {
+    border: 1px solid transparent;
+    .thumbnail {
+      position: relative;
+      height: 0;
+      padding-bottom: ~"calc( 700 / 818 * 100%)";
+    }
+    .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      &:extend(.middle-block);
+      img{
+        max-width: 100%;
+      }
+    }
+    .detail {
+      position: relative;
+      .px2rem(height, 195);
+      // padding-bottom: ~"calc( 195 / 260 * 100%)";
+      background-color: white;
+    }
+    .inner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .desc {
+      position: absolute;
+      left: 0;
+      right: 0;
+      .px2rem(bottom, 35);
+      .px2rem(padding, 0 5);
+      .px2rem(font-size, 13);
+      line-height: 1.2;
+      text-align: center;
+    }
+    .logo {
+      .px2rem(height, 95);
+      &:extend(.middle-block);
+    }
+    .link {
+      display: inline-block;
+      .px2rem(margin-top, 7);
+      font-weight: bold;
+    }
+    &:focus {
+      .no-touch & {
+        border-color: @blue;
+      }
+    }
+  }
+  .btn-group {
+    text-align: center;
+    .icon-arrow-down {
+      &.up { transform: rotateX(180deg);}
+    }
+  }
+  .btn-secondary {
+    padding: 1rem 1.2rem 1rem 1.4rem;
+    font-family: @exo-semibold;
+  }
+}
+.destinations {
+  .px2rem(padding-left, 20);
+}
+.list-destinations {
+  overflow: hidden;
+  .slick-list {
+    .px2rem(margin-left, -25);
+  }
+}
+.item-destinations {
+  float: left;
+  width: 100%;
+  .px2rem(padding-right, 15);
+}
+
+
+// Responsive
+// Mobile lanscapse
+@media (min-width: @screen-phone) {
+  .destination-block {
+    .thumbnail-block {
+      .desc { .px2rem(padding, 0 60);}
+    }
+  }
+}
+// tablet 600
+@media (min-width: @screen-mobile-landscape) {
+  .destinations {
+    padding-left: 0;
+    .px2rem(margin-top, 10);
+  }
+  .item-destinations {
+    .px2rem(margin-bottom, 30);
+    .px2rem(padding, 0 15);
+    width: 50%;
+  }
+  .destination-block {
+    .px2rem(padding, 13 0 60);
+    .grid-fluid {
+      overflow: hidden;
+      .px2rem(padding, 0 15);
+    }
+    .thumbnail-block {
+      .inner {
+        position: relative;
+      }
+      .detail {
+        height: 100%;
+        min-height: 14rem;
+      }
+      .desc {
+        .px2rem(padding, 0 35);
+        .px2rem(bottom, 20);
+        position:static;
+      }
+    }
+    .main-title { .px2rem(margin-bottom, 15);}
+  }
+}
+
+// tablet portrait 768
+@media (min-width: @screen-sm) {
+  .destination-block {
+    .grid-fluid { .px2rem(padding, 0 20);}
+    .thumbnail-block {
+      .detail {
+        height: 0;
+        padding-bottom: ~"calc( 200 / 300 * 100%)";
+        .inner {
+          position: absolute;
+        }
+      }
+      .desc {
+        .px2rem(padding, 0 5);
+        .px2rem(bottom, 25);
+        position: absolute;
+      }
+      .logo { .px2rem(height, 100);}
+      .link { .px2rem(margin-top, 7);}
+    }
+    .btn-group { .px2rem(margin-top, -14);}
+  }
+}
+
+// tablet portrait 900
+@media (min-width: @screen-sm-portrait-min) {
+  .item-destinations {
+    .px2rem(margin-bottom, 40);
+    .px2rem(padding, 0 15);
+    width: ~"calc(100% /3 - 1px)";
+    &:nth-child(3n+1) { clear: both;}
+  }
+  .destination-block {
+    .grid-fluid { .px2rem(padding, 0 20);}
+    .thumbnail-block {
+      .desc {
+       .px2rem(padding, 0 20);
+
+     }
+    }
+
+  }
+}
+
+// desktop large
+@media (min-width: @screen-lg-min) {
+  .item-destinations {
+    .px2rem(margin-bottom, 30);
+    .px2rem(padding, 0 13);
+  }
+  .destination-block {
+    .grid-fluid { .px2rem(padding, 0 10);}
+    .thumbnail-block {
+      .detail { padding-bottom: ~"calc( 195 / 410 * 100%)";}
+      .desc { .px2rem(padding, 0 25);}
+    }
+    .btn-group { margin-top: 0;}
+    .main-title { .px2rem(margin-bottom, 8);}
+    .btn-secondary { .px2rem(padding-bottom, 17);}
+  }
+}

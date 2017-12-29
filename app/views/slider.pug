@@ -1,0 +1,20 @@
+extends layouts/layout
+
+block vars
+  -title = 'Slider'
+  -bodyClass = 'style-guide slider-page'
+
+block container
+  h1.style-guide-header Slider
+  h2.style-guide-sub-header Slick slider
+  include blocks/slider-1
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  h2.style-guide-sub-header Full content on desktop, slider on mobile
+  include blocks/slider-2

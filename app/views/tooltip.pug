@@ -1,0 +1,50 @@
+extends layouts/layout
+
+block vars
+  -title = 'Tooltip'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Tooltip
+  h2.style-guide-sub-header Tooltip component
+  br
+  br
+  br
+  br
+  .tooltip-block
+    +tooltip(
+      {
+        title: 'Overview',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+      }
+    ).right-position
+    br
+    br
+    br
+    br
+    +tooltip(
+      {
+        title: 'Overview',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+      }
+    ).left-position
+    br
+    br
+    br
+    br
+    +tooltip(
+      {
+        title: 'Overview',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+      }
+    ).top-position
+    br
+    br
+    br
+    br
+    +tooltip(
+      {
+        title: 'Overview',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+      }
+    ).bottom-position

@@ -1,0 +1,8 @@
+mixin tooltip(obj)
+  .tooltip(data-tooltip)
+    span.tooltip-label(data-tooltip-control) i
+    .tooltip-content(data-tooltip-content)&attributes(attributes)
+      span.tooltip-close.icon.icon-close(data-close) &nbsp;
+      span.tooltip-arrow &nbsp;
+      .tooltip-title!=obj.title
+      .tooltip-desc!=obj.content

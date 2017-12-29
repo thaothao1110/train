@@ -1,0 +1,32 @@
+// Tabs style
+.nav-tabs{
+  li{
+    display: inline-block;
+    .px2rem(padding, 5 10);
+    .px2rem(margin, 0 5);
+    background: @blue;
+    .px2rem(font-size, 15);
+    a{
+      color: #ffffff;
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  .active{
+    background: @pink;
+  }
+}
+
+.wrap-tabs-content{
+  .px2rem(padding, 20);
+  background: @bg-gray;
+  .px2rem(font-size, 15);
+  .px2rem(line-height, 20);
+  .tabs-content{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+}

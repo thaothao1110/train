@@ -1,0 +1,27 @@
+extends layouts/template
+
+block vars
+  -title = 'Sitemap'
+
+block container
+  style.
+    .template {text-transform: uppercase; text-align: center;}
+    .template li {margin-top: 20px;}
+    .template a {display: block; padding: 15px; text-decoration: none; background: #fff; color: #111; line-height: 1;}
+    .template a:hover {background: #ddd; color: #000;}
+    @media only screen and (min-width : 767px) {
+      .template li {float: left; width: 33.33333333%; padding: 0 10px;}
+      .template li:nth-child(3n+1) {clear: left;}
+      .template ul {overflow: hidden; margin: 0 -10px;}
+    }
+  h1 FE Library
+  h2 Pages
+  ul
+    li: +link('Common style', 'common.html')
+    li: +link('Font awesome', 'fontawesome.html')
+    li: +link('Modal', 'modal.html')
+    li: +link('Form', 'form.html')
+    li: +link('Tabs', 'tabs.html')
+    li: +link('Accordion', 'accordion.html')
+    li: +link('Tooltip', 'tooltip.html')
+    li: +link('Slider', 'slider.html')

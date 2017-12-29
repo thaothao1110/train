@@ -1,0 +1,14 @@
+extends layouts/layout
+
+block vars
+  -title = 'Modal'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Modal
+  h2.style-guide-sub-header Show modal
+  ul.link-list
+    li: button.md-trigger(data-modal data-id='modal-1') Simple content
+    li: button.md-trigger(data-modal data-id='modal-2') Simple content (center - only desk)
+    li: button.md-trigger(data-modal data-id='modal-3') Scrolling long content
+    li: button.md-trigger(data-modal data-id='modal-4') Scrolling long content (inside - only desk)

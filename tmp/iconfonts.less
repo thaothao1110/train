@@ -1,0 +1,43 @@
+// THIS IS A AUTO GENERATION FILE. PLEASE DON'T TOUCH IT
+// YOU CAN MODIFY IT AT tmp/iconfonts.less
+
+// .for
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+// .for-each
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+.font-faces('<%= fontName %>');
+
+@icons: <%=glyphs.map(function(glyph) {
+  return '\'' + glyph.name + ':' + '\\' + glyph.unicode[0].charCodeAt(0).toString(16).toLowerCase() + '\''
+}).join(',\n    ') %>;
+
+<%=glyphs.map(function(glyph) {
+  return '@' + className + '-' +glyph.name + ': \'' + '\\' + glyph.unicode[0].charCodeAt(0).toString(16).toLowerCase() + '\''
+}).join(';\n    ') %>;
+
+.<%=className %> {
+  display: inline-block;
+  font-family: '<%= fontName %>';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  .for(@icons); .-each(@value) {
+    @getName: replace(@value, ':(.*)', '');
+    @name: ~"@{getName}";
+    @icon: replace(@value, '^[^:]*:', '');
+    &-@{name}:before {
+      content: @icon;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+extends layouts/layout
+
+block vars
+  -title = 'Form'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Form
+  +form('subscription-form')(class='form-1', novalidate, data-validate-custom, data-parsley-focus='first', data-parsley-validate)
+    .form-row
+      .form-col
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'company',
+            name: 'company',
+            textLabel: 'Company'
+          },
+          {
+            'maxlength': 38,
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +label('radio-1', 'Sex')
+        .form-group
+          +radio-custom(
+            {
+              type:'radio',
+              id:'radio-1',
+              name: 'radio-gender[]',
+              label:'Male'
+            },
+            {
+              'checked': 'checked',
+              'required': true,
+              'data-parsley-required': 'true',
+              'data-parsley-required-message': 'Lorem ipsum dolor sit amet',
+              'data-parsley-trigger': 'change'
+            }
+          )
+          +radio-custom(
+            {
+              type:'radio',
+              id:'radio-2',
+              name: 'radio-gender[]',
+              label:'Female'
+            }
+          )
+    .form-row
+      .form-col.half
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'user-name',
+            name: 'user-name',
+            textLabel:'User name'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing'
+          }
+        )(data-wrap-input)
+      .form-col.half
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'first-name',
+            name: 'first-name',
+            textLabel:'First name'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col.width-40
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'postal-code',
+            name: 'postal-code',
+            textLabel:'Code Postal'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+            'data-parsley-pattern': '[0-9]{5}',
+            'maxlength': 5,
+            'data-parsley-pattern-message': 'Excepteur sint occaecat cupidatat non proiden'
+          }
+        )(data-wrap-input)
+      .form-col.width-60
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'town',
+            name: 'town',
+            textLabel:'Town'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'e-mail',
+            name: 'e-mail',
+            textLabel:'Email'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-type': 'email',
+            'data-parsley-required-message': 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+            'data-parsley-type-message': 'Lorem ipsum dolor sit amet, consectetur adipisic'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +select-custom(
+        {
+          id: 'select-activities',
+          textLabel: 'Select activities',
+        },
+        {
+          'required': 'true',
+          'data-parsley-required': 'true',
+          'data-parsley-required-message':'Lorem ipsum dolor sit amet, consectetur adipisic',
+          'data-input-parsley': 'true',
+          'data-parsley-trigger': 'change',
+          'data-parsley-trigger-after-failure': 'change'
+        },
+        [
+          { text: 'Selectionner votre activite', value: '', selected: true},
+          { text: ' Works Council or similar', value: '1' },
+          { text: 'Association', value: '2' },
+          { text: 'Reseller CE', value: '3' },
+          { text: 'Professional Tourism', value: '4' },
+          { text: 'Coach', value: '5' },
+          { text: 'Retail', value: '6' },
+          { text: 'Netplayers', value: '7' },
+          { text: 'School Groups', value: '8' },
+          { text: 'Individual travel agents', value: '9' },
+          { text: 'Tour operator', value: '10' },
+        ])(data-wrap-input)
+    .form-row
+      .form-col
+        +label('checkbox', 'Excepteur sint occaecat cupidatat non proident')
+        .form-row(data-wrap-input)
+          .form-col.half
+            +check-box-custom(
+              {
+                type:'checkbox',
+                id:'checkbox-1',
+                name: 'checkbox-park[]',
+                value:'Parc Asterix',
+              },
+              {
+                'required': true,
+                'data-parsley-required': 'true',
+                'data-parsley-required-message': 'Lorem ipsum dolor sit amet',
+                'data-parsley-trigger': 'change'
+              }
+            )
+            +check-box-custom({type:'checkbox', id:'checkbox-2',name: 'checkbox-park[]', value:'Futuroscope'})
+            +check-box-custom({type:'checkbox', id:'checkbox-3',name: 'checkbox-park[]', value:'Grevin Paris'})
+            +check-box-custom({type:'checkbox', id:'checkbox-4',name: 'checkbox-park[]', value:'Bellewaerde'})
+            +check-box-custom({type:'checkbox', id:'checkbox-5',name: 'checkbox-park[]', value:'Walibi Belgium'})
+          .form-col.half
+            +check-box-custom({type:'checkbox', id:'checkbox-6',name: 'checkbox-park[]', value:'Aqualibi Belgium'})
+            +check-box-custom({type:'checkbox', id:'checkbox-7',name: 'checkbox-park[]', value:'Walibi Rhone-Alpes'})
+            +check-box-custom({type:'checkbox', id:'checkbox-8',name: 'checkbox-park[]', value:'Jardin d\'Acclimatation'})
+            +check-box-custom({type:'checkbox', id:'checkbox-9',name: 'checkbox-park[]', value:'France Miniature'})
+    .form-row.form-conditions
+      .form-col
+        +check-box-custom(
+          {
+            type:'checkbox',
+            id:'check-conditions',
+            name: 'checkbox-conditions'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Duis aute irure dolor in reprehenderit'
+          }
+        )(data-wrap-input)
+          label(for='check-conditions').label
+            span Duis aute les&nbsp;
+            +link('Excepteur sint occaecat cupidatat non','javascript:').link
+            span.check
+    +button({type: 'submit', name: 'validate-btn'}).btn.btn-1(data-submit-btn)
+      span.icon-labels Submit
+      span.icon.icon-arrow &nbsp;

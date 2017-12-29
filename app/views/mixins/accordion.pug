@@ -1,0 +1,8 @@
+mixin accordion(items)
+  .accordion(data-accordion)
+    each item in items
+      - if (typeof(item.show) === 'undefined') item.show = ''
+      .accordion-title(data-acc-title=item.id, class=item.show)
+        span.text!=item.text
+        span.icon.icon-arrow-down &nbsp;
+      .accordion-content(data-acc-content=item.id, class=item.show)!=item.content

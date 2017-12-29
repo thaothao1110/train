@@ -1,0 +1,20 @@
+mixin thumbnails(obj)
+  +link(obj.textLink, obj.urlLink).thumbnail-block(target="blank")
+    .thumbnail
+      .image
+        +img(obj.thumbAlt || 'images', obj.thumbUrl)
+    .detail
+      .inner
+        if obj.brand
+          .logo
+            +img(obj.brand.logoAlt || 'logo', obj.brand.logoUrl)
+        .desc
+          if obj.brochures
+            h2.title!=obj.brochures.name
+            p!=obj.brochures.type
+            p!=obj.brochures.sizeFormat
+            span.link!=obj.textLink
+              span.cda-icon.icon-download
+          else
+            p!=obj.desc
+            span.link(target='blank')!=obj.textLink

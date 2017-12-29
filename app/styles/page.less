@@ -1,0 +1,57 @@
+// Page
+.style-guide{
+  padding-bottom: 80px;
+  .style-guide-header{
+    font-family: @exo-semibold;
+    .px2rem(font-size, 30);
+    text-align: center;
+    margin: 30px 0;
+  }
+  .style-guide-sub-header{
+    font-family: @exo-semibold;
+    color: @blue;
+    position: relative;
+    display: inline-block;
+    margin: 20px 0;
+    &:after{
+      content:'';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 50%;
+      height: 2px;
+      background: @blue;
+      opacity: 0.7;
+    }
+  }
+  .block{
+    padding: 20px;
+  }
+  .icon-list{
+    font-size: 40px;
+    li{
+      display: inline-block;
+      margin: 20px;
+      color: @blue;
+    }
+  }
+  .link-list{
+    li{
+      margin: 20px;
+    }
+  }
+}
+
+.tooltip-block{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.slider-page{
+  .container{
+    padding: 0;
+  }
+  .style-guide-sub-header{
+    margin-left: 10px;
+  }
+}
